@@ -1,10 +1,11 @@
 import Chai from "./Chai.jsx";
 
 function App() {
+  const username = "ShubhamKumar";
   return (
     <>
       <Chai />
-      <h1>Chai Aur React | Shubham Kumar </h1>
+      <h1>Chai Aur React | {username} </h1>
     </>
   );
 }
@@ -18,3 +19,5 @@ export default App;
 // also the function name must also start with capital letter
 // also component file name must be .jsx not .js
 // otherwise error
+
+// {username} is an evaluated expression (not js)
