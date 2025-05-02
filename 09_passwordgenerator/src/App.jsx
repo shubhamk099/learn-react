@@ -10,7 +10,6 @@ function App() {
   // we need to cache a function and call it as our site load,
   // and when we increase length with slider, mark numbers and characters.
   // for this we can use useCallback(function, [dependencies]) hook
-
   const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -24,6 +23,7 @@ function App() {
     }
 
     for (let index = 0; index < length; index++) {
+      // pick random number from index [0, str.length - 1]
       let charIndex = Math.floor(Math.random() * str.length);
       pass += str.charAt(charIndex);
     }
@@ -64,7 +64,7 @@ function App() {
             Copy
           </button>
         </div>
-
+        {/* code for creating a slider  */}
         <div className="flex text-sm gap-x-2">
           <div className="flex items-center gap-x-0.8">
             <input
@@ -79,6 +79,7 @@ function App() {
             />
             <label htmlFor="passwordLength">Length : {length}</label>
           </div>
+          {/* code for length checkbox */}
           <div className="flex items-center gap-x-1">
             <input
               type="checkbox"
@@ -89,6 +90,7 @@ function App() {
               }}
             />
             <label htmlFor="numberInput">Numbers</label>
+            {/* code for character checkbox */}
           </div>
           <div className="flex items-center gap-x-1">
             <input
