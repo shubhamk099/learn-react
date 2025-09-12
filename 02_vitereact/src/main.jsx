@@ -7,9 +7,11 @@ function MyApp() {
   return <h3>MyApp function in main.jsx</h3>;
 }
 
-// It is not a function, .render() is expecting a function
-// for ReactElement, we have written my own render method
-// hear, it is not compatible
+/**
+ * It is not a function, .render() is expecting a function
+ * for ReactElement, earlier we have written my own render method, it is not compatible hear.
+ */
+
 const ReactElement = {
   type: "a",
   props: {
@@ -19,17 +21,18 @@ const ReactElement = {
   children: "clickme to go to google.com",
 };
 
-// It is a javascript object (react element object)
-// at the end the render method gets an object,
-// with compiled html,
-// hear we are giving the object directly
+/**
+ * This will work with .render() method, beacuse hear we are directly giving the html elememt.
+ */
 const anotherElement = (
   <a href="https://google.com" target="_blank">
     Go to Google
   </a>
 );
 
-// According to the react way, using React.createElement() method
+/**
+ * According to the react way, using React.createElement() method.
+ */
 const username = "shubhamkkumar";
 const correctElement = React.createElement(
   "a",
@@ -39,3 +42,7 @@ const correctElement = React.createElement(
 );
 
 createRoot(document.getElementById("root")).render(correctElement);
+
+/**
+ * In .render() method we can call MyApp() as function, and it will work.
+ */
